@@ -88,7 +88,7 @@ define compile_erl
 endef
 
 define compile_xyrl
-	$(xyrl_verbose) erlc -v -o ebin/ $(1)
+	$(xyrl_verbose) erlc -Iinclude/erlydtl_preparser.hrl -o ebin/ $(1)
 	$(xyrl_verbose) erlc $(ERLC_OPTS) -o ebin/ ebin/*.erl
 	@rm ebin/*.erl
 endef
